@@ -1,5 +1,5 @@
 body {
-  background-color: grey;
+  background-color: #232323;
 }
 
 .square {
@@ -13,4 +13,8 @@ body {
 #container {
   max-width: 600px;
   margin: 0, auto;
+}
+
+span {
+  color: white;
 }
