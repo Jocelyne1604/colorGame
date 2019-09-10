@@ -15,10 +15,17 @@ colorDisplay.textContent = pickedColor;
 
 for (let i = 0; i < squares.length; i++) {
   //Add initial colors to squares
-  squares[i].style.backgroundColor = colors[i];
+  squares[i].style.background = colors[i];
 
   //Add event listener to squares
   squares[i].addEventListener("click", function() {
-    alert("clicked a square");
+    //grab color of clicked square
+    let clickedColor = this.style.background;
+    //compare color to pickColor
+    if (clickedColor === pickedColor) {
+      alert("CORRECT!!");
+    } else {
+      alert("WRONG!!");
+    }
   });
 }
