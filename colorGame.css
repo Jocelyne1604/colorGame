@@ -2,7 +2,6 @@ body {
   background-color: #232323;
   margin: 0;
   font-family: "Montserrat", "Avenir";
-  font-size: ;
 }
 
 .square {
@@ -20,9 +19,17 @@ body {
 
 h1 {
   color: white;
+  line-height: 1.1;
   text-align: center;
   background: steelblue;
   margin: 0;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding: 20px 0;
+}
+
+#colorDisplay {
+  font-size: 200%;
 }
 
 #stripe {
