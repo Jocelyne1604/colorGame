@@ -6,6 +6,8 @@ Have a peak at the game below:
 
 ## SCREENSHOTS
 
+!["Playthrough"](https://github.com/Jocelyne1604/colorGame/blob/master/snapshot.gif)
+
 _Dependencies_
 
 - HTML
