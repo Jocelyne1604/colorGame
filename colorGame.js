@@ -14,7 +14,6 @@ for (let i = 0; i < modeButtons.length; i++) {
     modeButtons[1].classList.remove("selected");
     this.classList.add("selected");
     this.textContent === "Easy" ? (numSquares = 3) : (numSquares = 6);
-
     reset();
   });
 }
@@ -40,20 +39,7 @@ function reset() {
 }
 
 resetButton.addEventListener("click", function() {
-  //generate all new colors
-  colors = generateRandomColors(numSquares);
-  //pick a new random color from arr
-  pickedColor = pickColor();
-  //change colorDisplay to match picked color
-  colorDisplay.textContent = pickedColor;
-  this.textContent = "New Colors";
-  //change colors of sqares on page
-  for (let i = 0; i < squares.length; i++) {
-    //Add initial colors to squares
-    squares[i].style.background = colors[i];
-  }
-  h1.style.background = "steelblue";
-  messageDisplay.textContent = "";
+  reset();
 });
 
 colorDisplay.textContent = pickedColor;
