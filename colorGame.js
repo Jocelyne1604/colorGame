@@ -5,10 +5,48 @@ let colorDisplay = document.getElementById("colorDisplay");
 let messageDisplay = document.getElementById("message");
 let h1 = document.querySelector("h1");
 let resetButton = document.querySelector("#reset");
+let easyBtn = document.querySelector("#easyBtn");
+let hardBtn = document.querySelector("#hardBtn");
+
+easyBtn.addEventListener("click", function() {
+  hardBtn.classList.remove("selected");
+  easyBtn.classList.add("selected");
+  colors = generateRandomColors(3);
+  console.log(colors);
+
+  pickedColor = pickColor();
+  colorDisplay.textContent = pickedColor;
+  for (let i = 0; i < squares.length; i++) {
+    if (colors[i]) {
+      squares[i].style.background = colors[i];
+    } else {
+      squares[i].style.display = "none";
+    }
+    h1.style.background = "#232323";
+  }
+});
+
+hardBtn.addEventListener("click", function() {
+  hardBtn.classList.add("selected");
+  easyBtn.classList.remove("selected");
+  colors = generateRandomColors(6);
+  console.log(colors);
+  pickedColor = pickColor();
+  colorDisplay.textContent = pickedColor;
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].style.display = "block";
+    squares[i].style.background = colors[i];
+  }
+  h1.style.background = "#232323";
+});
 
 resetButton.addEventListener("click", function() {
   //generate all new colors
-  colors = generateRandomColors(6);
+  if (hardBtn.classList.value === "selected") {
+    colors = generateRandomColors(6);
+  } else {
+    colors = generateRandomColors(3);
+  }
   //pick a new random color from arr
   pickedColor = pickColor();
   //change colorDisplay to match picked color
